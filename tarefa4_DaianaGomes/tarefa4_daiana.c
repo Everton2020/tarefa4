@@ -39,6 +39,24 @@ void imprime(double **M, int dim)
   	}
   	
  }
+
+void escalonamento(double **M, int dim)
+ {
+ 	int i, j, k;
+ 	double pivo;
+ 	
+ 	for(k=0; k<dim-1; k++)
+ 	{
+ 		for(i=k+1; i<dim; i++)
+ 		{
+ 			pivo = (M[i][k] / M[k][k]);
+ 
+ 			for(j=k; j<dim+1; j++)
+ 				M[i][j] = M[i][j] - (pivo * M[k][j]);
+ 		}	
+ 	}
+ 	
+ }
 double **gera(int dim) 
 {
 	int i,j,k;
