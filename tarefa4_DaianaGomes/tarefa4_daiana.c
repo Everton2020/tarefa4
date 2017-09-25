@@ -138,7 +138,25 @@ double **gera(int dim)
 
 
 int main()
-{	int i;	
+{	int i, j, dim;
+ 	double **M, **M_gerada, a;
+ 	FILE *leitura;
+ 	char nome[10];
+ 
+ 	leitura = fopen("matriz.dat","r");
+ 	i = fscanf(leitura, "%d", &dim);
+ 	M = malloc(dim*sizeof(double *));
+         
+        ler(M,dim,leitura);
+ 	printf ("\nA matriz fornecida é:\n");
+ 	imprime(M, dim);
+ 	
+ 	decomposicaoLU(M, dim);
+ 	
+  	escalonamento(M, dim);
+ 	printf ("\nA matriz após o escalonamento é:\n");
+ 	imprime(M, dim);
+ 	
 	double **M_gerada1, **M_gerada2, **M_gerada3, **M_gerada4;
 	double **M_gerada5, **M_gerada6, **M_gerada7, **M_gerada8;
 	
