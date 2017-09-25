@@ -5,6 +5,28 @@
 
 
 
+
+void ler(double **M, int dim, FILE*leitura)
+ {	int i, j;
+     double a;	 
+ 
+ 	for (i=0; i<dim; i++) 
+ 	{
+ 	 	M[i] = malloc((dim+1)*sizeof(double));	
+ 	}
+ 	 
+ 	i = j = 0;
+ 	while(fscanf(leitura, "%lf", &a) != EOF) 
+ 	{
+ 		M[i][j] = a;
+ 	 	j++;
+ 	 	if(j==dim+1) 
+ 	 	{	j=0; i++;	}
+ 	
+ 	}
+ 
+ }
+ 
 void imprime(double **M, int dim)
  {	int i, j;
  
