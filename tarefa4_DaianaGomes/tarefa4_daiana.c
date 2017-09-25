@@ -157,6 +157,11 @@ int main()
  	printf ("\nA matriz após o escalonamento é:\n");
  	imprime(M, dim);
  	
+ 	printf("Digite o nome do arquivo: ");
+ 	scanf("%s", nome);
+ 	printf("O nome do arquivo é: %s\n", nome);
+ 	
+ 	
 	double **M_gerada1, **M_gerada2, **M_gerada3, **M_gerada4;
 	double **M_gerada5, **M_gerada6, **M_gerada7, **M_gerada8;
 	
