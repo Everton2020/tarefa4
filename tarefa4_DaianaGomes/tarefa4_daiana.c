@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include <string.h>
 #include <time.h>
-
+FILE *fp;
 
 
 
@@ -196,5 +196,14 @@ int main()
  	M_gerada8 = gera(4);
  	imprime(M_gerada8, 4);
  	printf("\n");
- 	//ok
+ 	
+ 	fp = fopen("m1.dat", "w");
+ 	for(i=0; i<5; i++)
+ 	{
+ 		for(j=0;j<4;j++)
+ 		{	
+			fprintf(fp, "m1.dat: %lf\n", M_gerada1[i][j]);
+ 		}
+ 	}
+ 	fclose(fp);
 }
