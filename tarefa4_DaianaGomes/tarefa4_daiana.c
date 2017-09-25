@@ -17,4 +17,22 @@ void imprime(double **M, int dim)
   	}
   	
  }
+double **gera(int dim) 
+{
+	int i,j,k;
+	double **M;
+
+	srand( (unsigned) time(NULL) );
+	M = malloc( dim*sizeof(double *));
+	for( i = 0 ; i < dim ; i++ ) M[i] = (double *) malloc((dim+1)*sizeof(double) );
+	for (i=0;i<dim;i++)
+	{
+		for (j=0;j<=dim;j++) 
+		{
+			M[i][j] = rand() % 20 -10;
+		}
+		
+	}
+	return M;
+}
 
