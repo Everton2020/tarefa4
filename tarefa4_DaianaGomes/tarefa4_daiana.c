@@ -5,7 +5,6 @@
 FILE *fp;
 
 
-
 void ler(double **M, int dim, FILE*leitura)
  {	int i, j;
      double a;	 
@@ -41,7 +40,7 @@ void imprime(double **M, int dim)
  }
 
 void escalonamento(double **M, int dim)
- {
+{
  	int i, j, k;
  	double pivo;
  	
@@ -56,9 +55,10 @@ void escalonamento(double **M, int dim)
  		}	
  	}
  	
- }
+}
+
 void decomposicaoLU(double **M, int dim)
- {	double **L, **U;
+{	double **L, **U;
      	int i,j,k, numop;
      	float soma1, soma2;
      	
@@ -139,7 +139,7 @@ double **gera(int dim)
 
 int main()
 {	int i, j, dim;
- 	double **M, **M_gerada, a;
+ 	double **M,  **M_gerada1, **M_gerada2, **M_gerada3, **M_gerada4,  **M_gerada5, **M_gerada6, **M_gerada7, **M_gerada8;
  	FILE *leitura;
  	char nome[10];
  
@@ -157,13 +157,10 @@ int main()
  	printf ("\nA matriz após o escalonamento é:\n");
  	imprime(M, dim);
  	
- 	printf("Digite o nome do arquivo: ");
+ 	printf("Digite o caminho do arquivo: ");
  	scanf("%s", nome);
  	printf("O nome do arquivo é: %s\n", nome);
  	
- 	
-	double **M_gerada1, **M_gerada2, **M_gerada3, **M_gerada4;
-	double **M_gerada5, **M_gerada6, **M_gerada7, **M_gerada8;
 	
 	M_gerada1 = gera(4);
  	imprime(M_gerada1,4);
@@ -186,7 +183,7 @@ int main()
  	printf("\n");
  	
  	M_gerada6 = gera(4);
- 	imprime(M_gerada6, 4);
+ 	imprime(M_gerada6, 4);		
  	printf("\n");
  	
  	M_gerada7 = gera(4);
@@ -196,14 +193,17 @@ int main()
  	M_gerada8 = gera(4);
  	imprime(M_gerada8, 4);
  	printf("\n");
- 	
- 	fp = fopen("m1.dat", "w");
- 	for(i=0; i<5; i++)
+
+ 	//salvando em arquivo cada matriz
+ 	/*fp = fopen("m1.dat", "w");
+ 	for(i=0; i<4; i++)
  	{
  		for(j=0;j<4;j++)
  		{	
-			fprintf(fp, "m1.dat: %lf\n", M_gerada1[i][j]);
+			//fprintf(fp, "m1.dat: %lf\n", M_gerada1[i][j]);
+			fprintf(fp,  "%lf\t",  M_gerada1[i][j] );
  		}
+ 		printf("\n");	
  	}
- 	fclose(fp);
+ 	fclose(fp);*/
 }
